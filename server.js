@@ -28,6 +28,7 @@ app.use('/assets', express.static(path.join(__dirname, 'public', 'demo_trader', 
         }
     }
 }));
+
 app.use('/Fonts', express.static(path.join(__dirname, 'public', 'demo_trader', 'dist', 'Fonts'), {
     setHeaders: (res, path) => {
         if (path.endsWith('.woff')) {
@@ -146,7 +147,7 @@ app.post('/api/chat', async (req, res) => {
     }
 });
 
-// Demo Wallet code -------------------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------------------- Trading Wallet code -------------------------------------------------------------------------------------------
 
 app.get("/database.json", (req, res) => {
     res.sendFile("database.json", {

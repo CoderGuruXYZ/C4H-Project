@@ -197,6 +197,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         localStorage.setItem("loggedIn", JSON.stringify(true));
 
                         setTimeout(function () {
+                            localStorage.setItem("loggedIn", JSON.stringify(true));
                             window.location.href = "index.html";
                         }, 500);
                     });

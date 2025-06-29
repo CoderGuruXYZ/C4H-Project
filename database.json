@@ -4,14 +4,14 @@
     {
       "coins": [
         {
-          "USDPrice": 152.306787815,
+          "USDPrice": 151.886216601,
           "Name": "Wrapped SOL",
           "Symbol": "SOL",
           "logo": "https://d23exngyjlavgo.cloudfront.net/solana_So11111111111111111111111111111111111111112",
           "address": "So11111111111111111111111111111111111111112",
           "amount": 0.9044729959709819,
-          "PricePercentChange": 4.1819521503068255,
-          "PriceChange": 6.113857072000002
+          "PricePercentChange": -0.228270436076641,
+          "PriceChange": -0.34749989200000186
         }
       ],
       "Wallet-Name": "Main"
