@@ -3,18 +3,62 @@
 }
 
 * {
-  -ms-overflow-style: none;
-  /* IE and Edge */
-  scrollbar-width: none;
-  /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
-.Wallet-wrapper {
+:root {
+  --background-main: #f7faff;
+  --background-secondary: #eaf1fb;
+  --background-footer: #e0e9f6;
+  --background-popup: #ffffff;
+  --background-coin: #e3edfa;
+  --background-hover: #d6e6fa;
+  --background-wallet: #e3edfa;
+  --background-sidebar: #eaf1fb;
+  --border-main: #b2c6e6;
+  --border-footer: #b2c6e6;
+  --border-sidebar: #b2c6e6;
+  --text-main: #1a2a3a;
+  --text-secondary: #3a5ca8;
+  --text-muted: #6c7a8c;
+  --accent: #3a5ca8;
+  --success: #21e56f;
+  --overlay: rgba(58, 92, 168, 0.1);
+}
+
+.dark-mode {
+  --background-main: #222222; 
+
+  --background-secondary: #2a2a2a; 
+
+  --background-footer: #2e2e2e;
+
+  --background-popup: #2b2b2b;
+  --background-coin: #2a2a2a;
+
+  --background-hover: #333333;
+
+  --background-wallet: #2a2a2a;
+
+  --background-sidebar: #000000;
+  --border-main: #3a3a3a;
+  --border-footer: #323232;
+  --border-sidebar: #2e2e2e;
+  --text-main: #ffffff;
+  --text-secondary: #ab9ff2;
+  --text-muted: #8e9397;
+  --accent: #ab9ff2;
+  --success: #21e56f;
+  --overlay: rgba(0, 0, 0, 0.75);
+}
+
+.Wallet-wrapper{
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #2a2a2a;
-  color: #ffffff;
+  background-color: var(--background-secondary);
+  color: var(--text-main);
   text-align: center;
   margin: 4px;
   padding: 4px;
@@ -24,22 +68,22 @@
   cursor: pointer;
 }
 
-.Wallet-Name {
+.Wallet-Name{
   font-size: 14px;
   font-weight: 700;
 }
 
-.Wallet-Icon {
+.Wallet-Icon{
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-.Sidebar-Functions {
+.Sidebar-Functions{
   padding-top: 5px;
   align-items: center;
   width: 40px;
-  border-top: solid 1px #2e2e2e;
+  border-top: solid 1px var(--background-footer);
   display: flex;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -49,8 +93,8 @@
   gap: 10px;
 }
 
-.Sidebar-Popup {
-  background-color: #000000;
+.Sidebar-Popup{
+  background-color: var(--background-sidebar);
   min-height: 575px;
   border-radius: 10px;
   min-height: 90vh;
@@ -70,7 +114,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: var(--overlay);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -78,7 +122,7 @@
 }
 
 .popup {
-  background-color: #2b2b2b;
+  background-color: var(--background-popup);
   width: 480px;
   max-width: 400px;
   max-height: 85vh;
@@ -95,14 +139,14 @@
 }
 
 .popupHeader h3 {
-  color: #ffffff;
+  color: var(--text-main);
   margin: 0;
 }
 
 .closeButton {
   background: none;
   border: none;
-  color: #ffffff;
+  color: var(--text-main);
   font-size: 24px;
   cursor: pointer;
 }
@@ -115,9 +159,9 @@
   width: 100%;
   padding: 12px;
   border-radius: 8px;
-  border: 1px solid #444;
-  background-color: #3b3c40;
-  color: #ffffff;
+  border: 1px solid var(--border-main);
+  background-color: var(--background-secondary);
+  color: var(--text-main);
   font-size: 16px;
 }
 
@@ -126,21 +170,21 @@
   min-width: 360px;
   width: 360px;
   min-height: 100vh;
-  border: #3a3a3a solid 1px;
+  border: 1px solid var(--border-main);
 }
 
 .Main {
-  max-width: 480px;
+  max-width: 400px;
+  position: relative;
   margin: 0 auto;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #222222;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding-top: 55px;
-  /* Adjusted for fixed header */
-  padding-bottom: 70px;
-  /* Adjusted for fixed footer */
+  background-color: var(--background-main);
+  overflow: hidden;
+  box-shadow: 0 4px 6px var(--overlay);
+  padding-top: 55px; /* Adjusted for fixed header */
+  padding-bottom: 59px; /* Adjusted for fixed footer */
 }
 
 .Details {
@@ -149,7 +193,7 @@
 }
 
 .App-header {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -158,14 +202,14 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  border: #323232;
+  border: 1px solid var(--border-main);
   gap: 1rem;
-  background-color: #222222;
-  border-bottom: 2px solid #2b2b2b;
-  max-width: 360px;
+  background-color: var(--background-main);
+  border-bottom: 2px solid var(--background-popup);
+  max-width: 400px;
 }
 
-.Shadow {
+.Shadow{
   position: absolute;
   top: 0;
   left: 0;
@@ -175,13 +219,13 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  border: #323232;
-  background-color: #222222;
-  border-bottom: 2px solid #2b2b2b;
+  border: 1px solid var(--border-main);
+  background-color: var(--background-main);
+  border-bottom: 2px solid var(--background-popup);
   max-width: 360px;
 }
 
-.Gas {
+.Gas{
   display: flex;
   position: absolute;
   justify-content: center;
@@ -190,8 +234,7 @@
 }
 
 .App-footer {
-  max-width: 360px;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
@@ -200,17 +243,17 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  border: #323232;
+  border: 1px solid var(--border-footer);
   gap: 1rem;
-  background-color: #2e2e2e;
+  background-color: var(--background-footer);
 }
 
-.Topper {
+.Topper{
   height: 2px;
   width: 43.6px;
   position: absolute;
   top: 0;
-  background-color: #ab9ff2;
+  background-color: var(--accent);
 }
 
 .App-header img {
@@ -221,10 +264,18 @@
 
 .App-Body {
   scrollbar-width: none;
-  min-height: 479px;
+  min-height: 560px;
+  border-left: solid 1px var(--border-footer);
+  border-right: solid 1px var(--border-footer);
   flex: 1;
   display: flex;
   flex-direction: column;
+}
+
+.GasIcon{
+  position: absolute;
+  right: -20px;
+  top: -2px;
 }
 
 .App-balance {
@@ -236,11 +287,11 @@
 .App-balance h1 {
   font-size: 36px;
   margin-bottom: 5px;
-  color: #ffffff;
+  color: var(--text-main);
 }
 
 #change {
-  color: #21e56f;
+  color: var(--success);
 }
 
 .App-balance-change {
@@ -273,9 +324,8 @@
   height: 76px;
   max-height: 76px;
   gap: 3px;
-  background-color: #2a2a2a;
-  color: #ffffff;
-  /* Major text color */
+  background-color: var(--background-secondary); 
+  color: var(--text-main); /* Major text color */
   border: none;
   border-radius: 12px;
   display: flex;
@@ -293,8 +343,7 @@
 }
 
 .Swap-Button:hover {
-  background-color: #2b2b2b;
-  /* Matches footer */
+  background-color: var(--background-hover);
 }
 
 .Balance-Wrapper {
@@ -310,8 +359,8 @@
 }
 
 .App-button {
-  background-color: #2a2a2a;
-  color: #8e9397;
+  background-color: var(--background-secondary);
+  color: var(--text-muted);
   border: none;
   border-radius: 10px;
   padding: 12px 24px;
@@ -325,7 +374,7 @@
 }
 
 .App-button:hover {
-  background-color: #333333;
+  background-color: var(--background-hover);
 }
 
 .Coin-Wrapper {
@@ -336,13 +385,13 @@
   gap: 1rem;
   padding: 1rem;
   border-radius: 20px;
-  background-color: #2a2a2a;
+  background-color: var(--background-coin);
   margin: 0.3rem auto;
   transition: all 0.2s ease;
 }
 
 .Coin-Wrapper:hover {
-  background-color: #333333;
+  background-color: var(--background-hover);
 }
 
 .Coin-Icon img {
@@ -358,7 +407,7 @@
 }
 
 .Coin-Name h3 {
-  color: #8e9397;
+  color: var(--text-muted);
   margin: 0;
   font-size: 1rem;
 }
@@ -374,7 +423,7 @@
 }
 
 .Coin-Price h3 {
-  color: #f1f1f1;
+  color: var(--text-main);
   margin: 0;
   font-size: 1rem;
 }
@@ -385,13 +434,14 @@
   flex-direction: column;
 }
 
-.PNL {
+.PNL{
   padding: 3px;
   border-radius: 5px;
   max-height: 29;
   max-width: 77px;
 }
 
-.Footer_Item {
+.Footer_Item{
   cursor: pointer;
 }
+

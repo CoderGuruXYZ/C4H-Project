@@ -3,7 +3,7 @@ import * as React from "react";
 import { useState, useEffect } from "react";
 import "./App.css";
 import {
-  Profile,
+    Profile,
   Recieve_Icon,
   Send_Icon,
   Swap_Icon,
@@ -16,7 +16,8 @@ import {
   Edit,
   Add,
   History,
-} from "./icons.jsx";
+  History_Icon,
+} from "./icons";
 import {
   getTotalBalance,
   getPortfolio,
@@ -27,9 +28,9 @@ import {
   getActiveWallet,
   changeActiveWallet,
   addWallet,
-} from "../api.js"; // Import the API functions
+} from "../api"; // Import the API functions
 
-// AddWalletPopup component to handle adding new wallets
+// Renders the Add Wallet popup modal
 const AddWalletPopup = ({ isOpen, onClose, onAddWallet }) => {
   const [walletName, setWalletName] = useState("");
   const [error, setError] = useState("");
@@ -83,7 +84,7 @@ const AddWalletPopup = ({ isOpen, onClose, onAddWallet }) => {
   );
 };
 
-// Sidebar component to display the list of wallets
+// Renders the sidebar with wallet selection and actions
 function Sidebar(props) {
   const [Wallets, setWallets] = useState([]);
 
@@ -104,7 +105,7 @@ function Sidebar(props) {
       }
     }
     fetchData();
-  }, [props.walletsUpdated]);
+  }, [props.walletsUpdated]); 
 
   return (
     <div
@@ -154,7 +155,7 @@ function Sidebar(props) {
   );
 }
 
-// Shadow component to display a shadow effect based on total change
+// Renders a shadow effect based on total change
 function Shadow(props) {
   const [totalChange, setTotalChange] = useState(0);
 
@@ -176,35 +177,69 @@ function Shadow(props) {
     <div
       className="Shadow"
       style={{
-        boxShadow: `${totalChange < 0 ? "#ff4d4d" : "#4dff4d"} 0px 0px 20vh`,
+        position: "absolute",
+        left: 0,
+        right: 0,
+        bottom: 0,
+        height: "10px",
+        pointerEvents: "none",
+        boxShadow: `0px 20px 1000px 0px ${totalChange < 0 ? "#ff4d4d" : "#4dff4d"}`,
+        zIndex: 1,
+        background: "transparent",
       }}
     ></div>
   );
 }
 
-// Header component to display the header with profile picture and gas fee
+// Custom hook to detect dark mode on the body
+function useBodyDarkMode() {
+  const [isDark, setIsDark] = useState(null);
+  useEffect(() => {
+    setIsDark(document.body.classList.contains("dark-mode"));
+    const observer = new MutationObserver(() => {
+      setIsDark(document.body.classList.contains("dark-mode"));
+    });
+    observer.observe(document.body, { attributes: true, attributeFilter: ["class"] });
+    return () => observer.disconnect();
+  }, []);
+  return isDark;
+}
+
+// Renders the app header with profile and gas info
 function Header(props) {
+  const isDarkMode = useBodyDarkMode();
+  if (isDarkMode === null) return null;
   return (
     <div className="App-header">
       <img
-        src="https://icon2.cleanpng.com/20180602/vww/avotf2bd2.webp"
+        src={isDarkMode ? "https://cdn.discordapp.com/attachments/1384964251524792433/1388584703178571936/ChatGPT_Image_Jun_28__2025__07_14_27_PM-removebg-preview.png?ex=686183c7&is=68603247&hm=fb06a1c80a77d3092dd8b348684e8304d39cd3fbc4ebfea60d2830c601992f2c&" : "https://cdn.discordapp.com/attachments/1384964251524792433/1388539462090231888/ChatGPT_Image_Jun_28_2025_04_19_54_PM.png?ex=686159a5&is=68600825&hm=c8fa8a67df1572e1f0899c60744780d84b52c1799769ef03077af21e8b0423b5&"}
         alt="profile-pic"
         onClick={props.SetActiveSidebar}
         style={{ cursor: "pointer" }}
       />
       <div className="Details">
-        <p>@althass</p>
-        <p style={{ color: "#ffffff", fontSize: "1.1em" }}>Main</p>
+        <p style={{ margin: 0,paddingTop: "5px" }}>@althass</p>
+        <p
+          style={{
+            ...(isDarkMode
+              ? { color: "#ffffff", fontSize: "1.1em" }
+              : { color: "black", fontSize: "1.1em" })
+          }}
+        >
+          Main
+        </p>
       </div>
       <div className="Gas">
         0.004
-        <Gas walletsUpdated={props.walletsUpdated} />
+        <div className="GasIcon">
+        <Gas walletsUpdated={props.walletsUpdated}/>
+        </div>
       </div>
     </div>
   );
 }
 
-// Swap_Button component to handle navigation and actions
+// Renders a button for swap/history navigation
 function Swap_Button(props) {
   const navigate = useNavigate();
 
@@ -224,12 +259,14 @@ function Swap_Button(props) {
   );
 }
 
-// Component to display individual coin details
+// Renders a single coin with price and change
 export function Coin(props) {
   const priceChangeValue = props.pricechange * props.amount;
   const formattedPriceChange = `${priceChangeValue < 0 ? "-" : "+"}$${Math.abs(
     priceChangeValue
   ).toFixed(4)}`;
+
+  const isDarkMode = useBodyDarkMode();
 
   return (
     <>
@@ -238,14 +275,14 @@ export function Coin(props) {
           <img src={props.logo} alt="SOL" />
         </div>
         <div className="Coin-Name">
-          <h3 style={{ color: "white" }}>{props.Name}</h3>
+          <h3 style={isDarkMode ? { color: "white" }: {color: "black"}}>{props.Name}</h3>
           <p>
             {props.amount.toFixed(4)}: {props.Symbol}
           </p>
         </div>
         <div className="Coin-Price">
           <h3>${(props.amount * props.USDPrice).toFixed(2)}</h3>
-          <p style={{ color: priceChangeValue < 0 ? "#ff4d4d" : "#4dff4d" }}>
+          <p style={isDarkMode ? { color: priceChangeValue < 0 ? "#ff4d4d" : "#4dff4d" } : { color: priceChangeValue < 0 ? "#ff4d4d" : "#0d8258" }}>
             {formattedPriceChange}
           </p>
         </div>
@@ -254,7 +291,7 @@ export function Coin(props) {
   );
 }
 
-// Component to display all coins
+// Renders the list of coins in the portfolio
 export function Coins(props) {
   const [coins, setCoins] = useState([]);
 
@@ -266,7 +303,7 @@ export function Coins(props) {
       }
     }
     fetchData();
-  }, [props.updatedCoins, props.activeWallet]);
+  }, [props.updatedCoins,props.activeWallet]);
 
   return (
     <>
@@ -289,12 +326,13 @@ export function Coins(props) {
   );
 }
 
-// Component to display the total balance and change
+// Renders the balance, change, and swap/history buttons
 function Balance(props) {
   const [totalBalance, setTotalBalance] = useState(0);
   const [percentChange, setPercentChange] = useState(0);
   const [totalChange, setTotalChange] = useState(0);
   const [error, setError] = useState(null);
+  const isDarkMode = useBodyDarkMode();
 
   useEffect(() => {
     async function updateAndFetchBalance() {
@@ -339,11 +377,11 @@ function Balance(props) {
     <>
       <div className="Balance-Wrapper">
         <div className="App-balance">
-          <h1 style={{ color: "#ffffff" }}>${totalBalance.toFixed(2)}</h1>
+          <h1 style={{ color: isDarkMode ? "#ffffff" : "#000000" }}>${totalBalance.toFixed(2)}</h1>
           <div className="App-balance-change">
             <h2
               id="change"
-              style={{ color: totalChange < 0 ? "#ff4d4d" : "#4dff4d" }}
+              style={isDarkMode ? { color: totalChange < 0 ? "#ff4d4d" : "#4dff4d" } : { color: totalChange < 0 ? "#ff4d4d" : "#0d8258" }}
             >
               {totalChange < 0 ? "-" : "+"}${Math.abs(totalChange).toFixed(2)}
             </h2>
@@ -358,7 +396,7 @@ function Balance(props) {
             >
               <h2
                 id="change"
-                style={{ color: percentChange < 0 ? "#ff4d4d" : "#4dff4d" }}
+                style={isDarkMode ? { color: percentChange < 0 ? "#ff4d4d" : "#4dff4d" } : { color: percentChange < 0 ? "#ff4d4d" : "#0d8258" }}
               >
                 {percentChange < 0 ? "-" : "+"}
                 {Math.abs(percentChange).toFixed(2)}%
@@ -367,35 +405,28 @@ function Balance(props) {
           </div>
         </div>
         <div className="Swap-Buttons">
-          <Swap_Button name="Recieve" icon={Recieve_Icon()} to="" />
-          <Swap_Button name="Send" icon={Send_Icon()} to="" />
           <Swap_Button name="Swap" icon={Swap_Icon()} to="/Swap" />
-          <Swap_Button name="Buy" icon={Buy_Icon()} to="" />
+          <Swap_Button name="History" icon={History_Icon()} to="/History" />
         </div>
       </div>
     </>
   );
 }
 
-// Component to display the body of the application
+// Renders the main body with balance and coins
 function Body(props) {
+  const isDarkMode = useBodyDarkMode();
   return (
     <>
       <div className="App-Body">
-        <Balance
-          walletsUpdated={props.walletsUpdated}
-          activeWallet={props.activeWallet}
-        />
-        <Coins
-          updatedCoins={props.updatedCoins}
-          activeWallet={props.activeWallet}
-        />
+        <Balance walletsUpdated={props.walletsUpdated} activeWallet={props.activeWallet}/>
+        <Coins updatedCoins={props.updatedCoins} activeWallet={props.activeWallet}/>
       </div>
     </>
   );
 }
 
-// Function to Navigate to different routes
+// Navigation helper for footer items
 function Naviagate_to(props) {
   const navigate = useNavigate();
 
@@ -414,16 +445,18 @@ function Naviagate_to(props) {
   );
 }
 
-// Footer component to display the footer with navigation
+// Renders the app footer with navigation
 function Footer() {
   const location = useLocation();
   const [pos, changepos] = useState("17.5%");
 
   useEffect(() => {
     if (location.pathname === "/Swap") {
-      changepos("70%"); // Active color
-    } else if (location.pathname === "/") {
-      changepos("17.5%");
+      changepos("45%"); 
+    } else if (location.pathname === "/index.html") {
+      changepos("10%");
+    } else {
+      changepos("80%"); 
     }
   }, [location.pathname]);
 
@@ -432,9 +465,9 @@ function Footer() {
       <div className="App-footer">
         <div
           className="Topper"
-          style={{ left: pos, transition: "left 0.5s ease-in-out" }}
+          style={{ left: pos }}
         ></div>
-        {<Naviagate_to item={SVGComponent()} to={"/"} />}
+        {<Naviagate_to item={SVGComponent()} to={"/index.html"} />}
         {<Naviagate_to item={Swap_Footer()} to={"/Swap"} />}
         {<Naviagate_to item={History()} to={"/History"} />}
       </div>
@@ -442,7 +475,7 @@ function Footer() {
   );
 }
 
-// Main App component that combines all the other components
+// Main App component, manages state and layout
 function App() {
   const [activeSidebar, SetActiveSidebar] = useState(false);
   const [activeWallet, SetActiveWallet] = useState("");
@@ -502,14 +535,7 @@ function App() {
   }, [activeWallet]);
 
   useEffect(() => {
-    async function initialize() {
-      try {
-        const message = await initializeMoralis();
-        console.log("Moralis initialization:", message);
-      } catch (error) {
-        console.error("Error initializing Moralis:", error);
-      }
-    }
+
 
     async function update() {
       try {
@@ -521,7 +547,6 @@ function App() {
       }
     }
 
-    initialize();
     update();
 
     const interval = setInterval(update, 10000);
@@ -547,7 +572,7 @@ function App() {
           activeWallet={activeWallet}
         />
         {loading ? (
-          <div>Loading...</div>
+          <div></div> 
         ) : (
           <Body
             updatedCoins={updatedCoins}

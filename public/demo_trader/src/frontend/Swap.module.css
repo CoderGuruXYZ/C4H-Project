@@ -3,10 +3,53 @@
 }
 
 * {
-  -ms-overflow-style: none;
-  /* IE and Edge */
-  scrollbar-width: none;
-  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+:root {
+  --background-main: #f7faff;
+  --background-secondary: #eaf1fb;
+  --background-footer: #e0e9f6;
+  --background-popup: #ffffff;
+  --background-coin: #e3edfa;
+  --background-hover: #d6e6fa;
+  --background-wallet: #e3edfa;
+  --background-sidebar: #eaf1fb;
+  --border-main: #b2c6e6;
+  --border-footer: #b2c6e6;
+  --border-sidebar: #b2c6e6;
+  --text-main: #1a2a3a;
+  --text-secondary: #3a5ca8;
+  --text-muted: #6c7a8c;
+  --accent: #3a5ca8;
+  --success: #21e56f;
+  --overlay: rgba(58, 92, 168, 0.1);
+}
+
+.dark-mode {
+  --background-main: #222222; 
+
+  --background-secondary: #2a2a2a; 
+
+  --background-footer: #2e2e2e;
+
+  --background-popup: #2b2b2b;
+  --background-coin: #2a2a2a;
+
+  --background-hover: #333333;
+
+  --background-wallet: #2a2a2a;
+
+  --background-sidebar: #000000;
+  --border-main: #3a3a3a;
+  --border-footer: #323232;
+  --border-sidebar: #2e2e2e;
+  --text-main: #ffffff;
+  --text-secondary: #ab9ff2;
+  --text-muted: #8e9397;
+  --accent: #ab9ff2;
+  --success: #21e56f;
+  --overlay: rgba(0, 0, 0, 0.75);
 }
 
 #root {
@@ -14,21 +57,22 @@
   min-width: 360px;
   width: 100%;
   min-height: 100vh;
-  border: #3a3a3a solid 1px;
+  border: 1px solid var(--border-main);
 }
 
 .Main {
-  max-width: 480px;
+  max-width: 400px;
+  position:relative;
   margin: 0 auto;
   min-height: 100vh;
   display: flex;
   align-items: center;
+  border-left: solid 1px var(--border-footer);
+  border-right: solid 1px var(--border-footer);
   flex-direction: column;
-  background-color: #222222;
-  padding-top: 55px;
-  /* Adjusted for fixed header */
-  padding-bottom: 70px;
-  /* Adjusted for fixed footer */
+  background-color: var(--background-main);
+  padding-top: 55px; /* Adjusted for fixed header */
+  padding-bottom: 70px; /* Adjusted for fixed footer */
 }
 
 .Details {
@@ -37,7 +81,7 @@
 }
 
 .AppHeader {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -45,14 +89,14 @@
   min-height: 59px;
   display: flex;
   align-items: center;
-  border: #323232;
+  border: 1px solid var(--border-main);
   gap: 1rem;
-  background-color: #222222;
-  border-bottom: 2px solid #2b2b2b;
+  background-color: var(--background-main);
+  border-bottom: 2px solid var(--background-popup);
 }
 
 .AppFooter {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
@@ -60,9 +104,9 @@
   min-height: 60px;
   display: flex;
   align-items: center;
-  border: #323232;
+  border: 1px solid var(--border-footer);
   gap: 1rem;
-  background-color: #2b2b2b;
+  background-color: var(--background-popup);
 }
 
 .AppHeader img {
@@ -73,7 +117,9 @@
 
 .AppBody {
   scrollbar-width: none;
-  min-height: 479px;
+  min-height: 560px;
+  border-left: solid 1px var(--border-footer);
+  border-right: solid 1px var(--border-footer);
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -81,12 +127,11 @@
 
 .UIMain input {
   width: 170px;
-  height: 48px;
-  /* Increased from 36px */
+  height: 48px; /* Increased from 36px */
   border-radius: 5px;
   border: none;
-  background-color: #2b2b2b;
-  color: #ffffff;
+  background-color: var(--background-popup);
+  color: var(--text-main);
   font-size: 16px;
   font-size: 1.5rem;
 }
@@ -112,8 +157,8 @@
   gap: 8px;
   padding: 6px 12px;
   border-radius: 8px;
-  background-color: #3b3c40;
-  border: 1px solid #444;
+  background-color: var(--background-hover);
+  border: 1px solid var(--border-main);
   cursor: pointer;
 }
 
@@ -129,11 +174,10 @@
   flex-direction: column;
   padding: 16px;
   border-radius: 12px;
-  background-color: #2b2b2b;
+  background-color: var(--background-popup);
   padding: 10px;
   gap: 10px;
 }
-
 .box {
   display: flex;
   margin: 10px;
@@ -149,7 +193,7 @@
 
 .selling-text {
   font-size: 12px;
-  color: #cccccc;
+  color: var(--text-muted);
 }
 
 .amount {
@@ -159,15 +203,15 @@
   align-items: center;
   gap: 4px;
   font-size: 14px;
-  color: #aaaaaa;
+  color: var(--text-muted);
 }
 
 .half,
 .max {
   padding: 4px 6px;
   border-radius: 6px;
-  background-color: #3b3c40;
-  color: #aaaaaa;
+  background-color: var(--background-hover);
+  color: var(--text-muted);
   font-size: 10px;
   border: 1px solid transparent;
   cursor: pointer;
@@ -175,8 +219,8 @@
 
 .half:hover,
 .max:hover {
-  border-color: #cccccc;
-  color: #ffffff;
+  border-color: var(--border-main);
+  color: var(--text-main);
 }
 
 .UIMain {
@@ -194,8 +238,8 @@
   gap: 8px;
   padding: 6px 12px;
   border-radius: 8px;
-  background-color: #3b3c40;
-  border: 1px solid #444;
+  background-color: var(--background-hover);
+  border: 1px solid var(--border-main);
   cursor: pointer;
 }
 
@@ -208,7 +252,7 @@
 .currency-text {
   font-size: 14px;
   font-weight: 600;
-  color: #ffffff;
+  color: var(--text-main);
 }
 
 .UIFooter {
@@ -230,7 +274,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: var(--overlay);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -238,7 +282,7 @@
 }
 
 .popup {
-  background-color: #2b2b2b;
+  background-color: var(--background-popup);
   width: 100%;
   max-width: 400px;
   max-height: 85vh;
@@ -255,14 +299,14 @@
 }
 
 .popupHeader h3 {
-  color: #ffffff;
+  color: var(--text-main);
   margin: 0;
 }
 
 .closeButton {
   background: none;
   border: none;
-  color: #ffffff;
+  color: var(--text-main);
   font-size: 24px;
   cursor: pointer;
 }
@@ -275,9 +319,9 @@
   width: 100%;
   padding: 12px;
   border-radius: 8px;
-  border: 1px solid #444;
-  background-color: #3b3c40;
-  color: #ffffff;
+  border: 1px solid var(--border-main);
+  background-color: var(--background-hover);
+  color: var(--text-main);
   font-size: 16px;
 }
 
@@ -293,16 +337,16 @@
 }
 
 .coinListItem:hover {
-  background-color: #3b3c40;
+  background-color: var(--background-hover);
 }
 
 .closeBottomButton {
   width: 100%;
   padding: 12px;
   border-radius: 8px;
-  background-color: #3b3c40;
-  border: 1px solid #444;
-  color: #ffffff;
+  background-color: var(--background-hover);
+  border: 1px solid var(--border-main);
+  color: var(--text-main);
   cursor: pointer;
   transition: background-color 0.2s;
 }
@@ -311,30 +355,28 @@
   width: 100%;
   padding: 12px;
   border-radius: 8px;
-  background-color: #ab9ff2;
-  color: #ffffff;
+  background-color: var(--accent);
+  color: var(--text-main);
   cursor: pointer;
   transition: background-color 0.2s;
   margin-bottom: 10px;
 }
 
 .Select:hover {
-  background-color: #afa4ef;
+  background-color: var(--accent);
 }
 
-.Swap_Div {
-  width: 80%;
-  height: 20%;
+.Swap_Div{
+  width: 12%;
+  height: 1%;
 }
 
-.Swap_Button {
-  width: 100%;
+.Swap_Button{
   padding: 12px;
-  height: 100%;
   border-radius: 11px;
   margin-top: 1.4rem;
-  background-color: #afa4ef;
-  color: #ffffff;
+  background-color: #9D87DE;
+  color: var(--text-main);
   cursor: pointer;
   transition: background-color 0.2s;
 }
@@ -348,13 +390,13 @@
   gap: 1rem;
   padding: 1rem;
   border-radius: 20px;
-  background-color: #2a2a2a;
+  background-color: var(--background-coin);
   margin: 0.3rem auto;
   transition: all 0.2s ease;
 }
 
 .CoinWrapper:hover {
-  background-color: #333333;
+  background-color: var(--background-hover);
 }
 
 .CoinIcon img {
@@ -370,7 +412,7 @@
 }
 
 .CoinName h3 {
-  color: #8e9397;
+  color: var(--text-muted);
   margin: 0;
   font-size: 1rem;
 }
@@ -386,7 +428,7 @@
 }
 
 .CoinPrice h3 {
-  color: #f1f1f1;
+  color: var(--text-main);
   margin: 0;
   font-size: 1rem;
 }
@@ -405,13 +447,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #afa4ef;
+  background-color: var(--accent);
   border-radius: 16px;
   width: 32px;
   height: 32px;
 }
 
-.SwapTerminal {
+.SwapTerminal{
   display: flex;
   flex-direction: column;
   gap: 22px;

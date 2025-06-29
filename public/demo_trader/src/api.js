@@ -1,6 +1,6 @@
 // All functions which call the API
 
-const baseUrl = 'http://localhost:5000'; // Use your server's base URL
+const baseUrl = 'http://localhost:3000'; // Use your server's base URL
 
 // Function to get token price
 export async function getTokenPrice(address) {
