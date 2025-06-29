@@ -1,0 +1,132 @@
+/* Styling for all the forums stuff */
+
+#createForumButton {
+    background-color: var(--blue1, #0066cc);
+    color: var(--white1, #ffffff);
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 1em;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+#createForumButton:hover {
+    background-color: var(--blue2, #0052a3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.topBar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.forum-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.forum {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    transition: all 0.2s ease;
+    color: #333;
+}
+
+.forum:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.forum-left {
+    flex: 3;
+}
+
+.forum-middle {
+    flex: 1;
+    text-align: center;
+}
+
+.forum-right {
+    flex: 1;
+    text-align: right;
+}
+
+.forum-title {
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--blue1, #0066cc);
+    text-decoration: none;
+}
+
+.forum-date {
+    font-size: 1em;
+    color: #666;
+    margin-top: 5px;
+}
+
+.forum-views,
+.forum-replies {
+    font-size: 1em;
+    color: #555;
+}
+
+.forum-reply {
+    font-weight: 500;
+    font-size: 1em;
+    color: #555;
+}
+
+.form-timestamp {
+    font-size: 1em;
+    color: #555;
+}
+
+body {
+    background-color: #f0f0f0;
+}
+
+/* Media queries for mobile */
+
+@media (max-width: 800px) {
+    #createForumButton {
+        width: 100%;
+        font-size: 1em;
+        padding: 14px 0;
+        border-radius: 8px;
+    }
+
+    .topBar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+        padding: 6px 2vw;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .forum {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .forum-middle,
+    .forum-right {
+        text-align: left;
+    }
+}

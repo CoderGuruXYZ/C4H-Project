@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Live Charts | WealthLink</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="WealthLink live charts. View real-time market data and trends.">
+    <link rel="icon" href="images/logoimg.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/dark-mode.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/bfbf24a258.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-database.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+</head>
+
+<body style="width: 100vw;">
+    <h1 class="text-center my-4">
+        Trading Charts
+    </h1>
+    <h4 class="text-center mb-4">
+        Live Market Data and Trends powered by TradingView
+    </h4>
+    <main class="container-fluid py-4">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 mb-4">
+                <div class="tradingview-widget-container">
+                    <div id="tradingview_chart"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="scripts/init.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://s3.tradingview.com/tv.js"></script>
+    <script>
+        // Gets the current theme for TradingView based on the body's class
+        function getSiteTheme() {
+            return document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+        }
+
+        let lastTheme = getSiteTheme();
+        function renderTradingViewWidget(force) {
+            const currentTheme = getSiteTheme();
+            if (!force && currentTheme === lastTheme) return;
+            lastTheme = currentTheme;
+            document.getElementById('tradingview_chart').innerHTML = '';
+            setTimeout(function() {
+                // Initialize TradingView widget with the current theme
+                new TradingView.widget({
+                    "width": "100%",
+                    "height": 600,
+                    "symbol": "NASDAQ:AAPL",
+                    "interval": "D",
+                    "timezone": "Etc/UTC",
+                    "theme": currentTheme,
+                    "style": "1",
+                    "locale": "en",
+                    "toolbar_bg": currentTheme === 'dark' ? "#222" : "#f1f3f6",
+                    "enable_publishing": false,
+                    "allow_symbol_change": true,
+                    "container_id": "tradingview_chart"
+                });
+            }, 100);
+        }
+
+        // For the widget, we need to render it on page load and also when the theme changes
+        document.addEventListener('DOMContentLoaded', function() { renderTradingViewWidget(true); });
+        const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                if (mutation.attributeName === 'class') {
+                    renderTradingViewWidget(true);
+                }
+            });
+        });
+        observer.observe(document.body, { attributes: true });
+    </script>
+    <script src="scripts/navbar.js"></script>
+    <script src="scripts/footer.js"></script>
+</body>
+
+</html>

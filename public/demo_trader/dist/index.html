@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+		<meta charset='utf-8'>
+		<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+		<title>Trading Simulator | WealthLink</title>
+		<meta name='description' content=''>
+		<meta name='viewport' content='width=device-width, initial-scale=1'>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+			integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+			crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+		<link rel="icon" href="../../images/logoimg.png">
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+			rel="stylesheet">
+
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+		<link rel='stylesheet' href='../../styles/style.css'>
+		<link rel="stylesheet" href="../../styles/dark-mode.css">
+		<link rel="stylesheet" href="./css/index.css">
+
+		<script type="module" crossorigin src="./assets/index.js"></script>
+		<link rel="stylesheet" crossorigin href="./assets/index.css">
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+		<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-database.js"></script>
+		<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+		<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.5/dist/purify.min.js"></script>
+	</head>
+
+	<body>
+		<div>
+			<h1 class = "text-center mb-4" style = "font-size: 2.8em; margin-top: 50px;">Demo Trading Simulation</h1>
+
+			<div id="main" style="margin: 50px;"></div>
+
+			<button class="tips-button" onclick="openTipsModal()" title="Help & Tips">
+				<i class="fas fa-question"></i>
+			</button>
+
+			<div id="tipsModal" class="tips-modal" onclick="closeTipsModal(event)">
+				<div class="tips-content" onclick="event.stopPropagation()">
+					<div class="tips-header">
+						<h2><i class="fas fa-lightbulb"></i> Trading App Guide</h2>
+						<button class="close-tips" onclick="closeTipsModal()">&times;</button>
+					</div>
+					<div class="tips-body">
+						<div class="tip-section">
+							<h3>📱 Getting Started: Balance Page</h3>
+							<p>When you first log in, you land on the Balance Page (Main Dashboard).</p>
+							<p>Total Wallet Balance is displayed at the top and updates in real-time.</p>
+							<p>Below the balance, you'll see a list of assets you currently hold (e.g., Wrapped SOL).</p>
+							<p><strong>Each asset shows:</strong></p>
+							<ul>
+								<li>Current price</li>
+								<li>Amount you hold</li>
+								<li>Daily price change</li>
+							</ul>
+							<p><strong>Wallet Management:</strong></p>
+							<ul>
+								<li>Click the wallet icon (top left corner) to:
+									<ul>
+										<li>Switch between wallets</li>
+										<li>Add a new wallet</li>
+										<li>Remove an existing wallet</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+
+						<div class="tip-section">
+							<h3>🔄 How to Swap Tokens</h3>
+							<p>Go to the Swap Page (swap icon at the bottom).</p>
+							<p><strong>Steps to swap:</strong></p>
+							<ul>
+								<li>Select the token you want to sell from your assets.</li>
+								<li>Select the token you want to buy:
+									<ul>
+										<li>Choose from a list of available tokens, or</li>
+										<li>Paste the contract address for a custom token.</li>
+									</ul>
+								</li>
+								<li>Enter the amount you want to swap.</li>
+								<li>Review all transaction details carefully.</li>
+								<li>Confirm the swap to process the trade on the Solana network.</li>
+							</ul>
+						</div>
+
+						<div class="tip-section">
+							<h3>🕒 Viewing Transaction History</h3>
+							<p>Access the History Page by tapping the clock icon at the bottom.</p>
+							<p><strong>The History Page shows:</strong></p>
+							<ul>
+								<li>All past transactions</li>
+								<li>Swapped amounts</li>
+								<li>Token pairs</li>
+								<li>Transaction dates</li>
+							</ul>
+						</div>
+
+						<div class="tip-section">
+							<h3>✅ Pro Tips for Using the App</h3>
+							<ul>
+								<li>Easily switch, add, or remove wallets from the Balance Page.</li>
+								<li>Double-check token contract addresses when trading lesser-known coins.</li>
+								<li>Monitor gas fees displayed in the top right corner of the Balance Page.</li>
+								<li>Use the History tab to track your trading journey and review past swaps.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<footer class="footer bg-dark text-white py-4">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 mb-4 mb-md-0">
+							<h5 class="text-uppercase mb-3">WealthLink</h5>
+							<p>Innovating financial solutions for a better tomorrow.</p>
+						</div>
+					</div>
+					<hr class="my-4 bg-light">
+					<div class="text-center">
+						<p class="mb-0">&copy; 2025 WealthLink. All rights reserved.</p>
+					</div>
+				</div>
+			</footer>
+		</div>
+
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+		<script src='../../scripts/init.js'></script>
+		<script src="../../scripts/navbar.js"></script>
+		<script src="./js/index.js"></script>
+</body>
+
+</html>

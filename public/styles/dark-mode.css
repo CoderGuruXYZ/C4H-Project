@@ -1,0 +1,278 @@
+/* Main dark mode styling */
+
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.dark-mode .hero-section {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.dark-mode .about-section {
+    background-color: #222222;
+}
+
+.dark-mode .card {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.dark-mode .services-section {
+    background-color: #1a1a1a;
+}
+
+.dark-mode .cta-section {
+    background-color: #9a8ee8;
+}
+
+.dark-mode .footer {
+    background-color: #111111;
+}
+
+.dark-mode .btn-light {
+    background-color: #444444;
+    color: #ffffff;
+    border-color: #555555;
+}
+
+.dark-mode .btn-primary {
+    background-color: #9a8ee8 !important;
+    border-color: #9a8ee8 !important;
+}
+
+.dark-mode .btn-outline-primary {
+    color: #9a8ee8;
+    border-color: #9a8ee8;
+}
+
+.dark-mode .btn-outline-primary:hover {
+    background-color: #9a8ee8 !important;
+    color: #ffffff !important;
+}
+
+.dark-mode .text-primary {
+    color: #ffffff !important;
+}
+
+.dark-mode .navbar {
+    background-color: #222222 !important;
+    color: #ffffff;
+}
+
+.dark-mode .navbar-light .nav-link {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.dark-mode .navbar-light .nav-link.active,
+.dark-mode .navbar-light .nav-link:hover {
+    color: #ffffff;
+}
+
+.dark-mode .navbar-brand strong {
+    color: #ffffff !important;
+}
+
+.dark-mode .bg-light {
+    background-color: #222222 !important;
+}
+
+.dark-mode .services-section.bg-light {
+    background-color: #1a1a1a !important;
+}
+
+.dark-mode .form-check-label {
+    color: #ffffff;
+}
+
+.dark-mode .message-sender {
+    color: #9a8ee8;
+}
+
+.dark-mode .createForumForm input:focus,
+.dark-mode .createForumForm textarea:focus {
+    border-color: #9a8ee8;
+}
+
+.dark-mode #createForumSubmit {
+    background-color: #9a8ee8;
+}
+
+.dark-mode #createForumSubmit:hover {
+    background-color: #796fd5;
+}
+
+.dark-mode .forumTitleMain {
+    color: #9a8ee8;
+}
+
+.dark-mode .forumPostHeader {
+    border-bottom: 1px solid #796fd5;
+}
+
+.dark-mode .replyToForumHeader {
+    color: #9a8ee8;
+}
+
+.dark-mode .replyToForumTextArea {
+    background-color: #2a2a2a;
+    border-color: #404040;
+    color: #ffffff;
+}
+
+.dark-mode .replyToForumTextArea:focus {
+    background-color: #2a2a2a;
+    color: #ffffff;
+    border-color: #9a8ee8;
+    outline: none;
+}
+
+.dark-mode .replyToForumButton {
+    background-color: #9a8ee8;
+}
+
+.dark-mode .replyToForumButton:hover {
+    background-color: #796fd5;
+}
+
+.dark-mode #createForumButton {
+    background-color: #9a8ee8;
+}
+
+.dark-mode #createForumButton:hover {
+    background-color: #796fd5;
+}
+
+.dark-mode .forum-title {
+    color: #9a8ee8;
+}
+
+.dark-mode .bg-primary {
+    background-color: #9a8ee8 !important;
+}
+
+/* Forums in dark mode */
+.dark-mode .forum {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-mode .forum-date,
+.dark-mode .forum-views,
+.dark-mode .forum-replies,
+.dark-mode .forum-reply,
+.dark-mode .form-timestamp {
+    color: #fff;
+}
+
+/* Forum in dark mode */
+.dark-mode .forumPost {
+    background-color: #333;
+    color: #fff;
+    border: none;
+}
+
+.dark-mode .forumPostedAuthor,
+.dark-mode .forumPostedDate,
+.dark-mode .forumPostAuthor,
+.dark-mode .forumPostContentText {
+    color: #fff;
+}
+
+.dark-mode .replyToForum {
+    background-color: #333;
+    border: none;
+}
+
+.dark-mode .replyToForumHeader {
+    color: #fff;
+}
+
+/* CreateForum Dark Mode */
+.dark-mode .createForumForm input[type="text"],
+.dark-mode .createForumForm textarea {
+    background-color: #333;
+    color: #fff;
+    border: none;
+}
+
+/* Dashboard table in dark mode */
+.dark-mode .table {
+    color: #ffffff !important;
+    border-color: #1a1a1a;
+}
+
+.dark-mode .table thead th {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border-bottom: 2px solid #1a1a1a;
+    padding: 0.75rem;
+}
+
+.dark-mode .table tbody tr {
+    background-color: #2a2a2a !important;
+    border-bottom: 1px solid #1a1a1a;
+}
+
+.dark-mode .table-striped tbody tr:nth-of-type(odd),
+.dark-mode .table-striped tbody tr:nth-of-type(even) {
+    background-color: #2a2a2a !important;
+}
+
+.dark-mode .table td,
+.dark-mode .table th {
+    border-color: #1a1a1a;
+    padding: 0.5rem 0.75rem;
+    color: #ffffff;
+    background-color: #2a2a2a !important;
+}
+
+.dark-mode .text-success {
+    color: #2ecc71 !important;
+}
+
+.dark-mode .text-danger {
+    color: #ff6b6b !important;
+}
+
+.dark-mode .text-warning {
+    color: #ffd43b !important;
+}
+
+.dark-mode .modal-content {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.dark-mode .form-control {
+    background-color: #2a2a2a;
+    border-color: #404040;
+    color: #ffffff;
+}
+
+.dark-mode .form-control:focus {
+    background-color: #2a2a2a;
+    color: #ffffff;
+}
+
+.dark-mode .text-muted {
+    color: #a0a0a0 !important;
+}
+
+.dark-mode .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+.dark-mode .replyErrorMessage {
+    color: #ff6b6b;
+}
+
+/* Navbar toggle in dark mode */
+.dark-mode .navbar-toggler-icon {
+    filter: invert(1);
+}
+
+.dark-mode .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5);
+}

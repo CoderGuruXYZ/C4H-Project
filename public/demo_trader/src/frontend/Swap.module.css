@@ -1,0 +1,419 @@
+*::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+#root {
+  min-height: 600px;
+  min-width: 360px;
+  width: 100%;
+  min-height: 100vh;
+  border: #3a3a3a solid 1px;
+}
+
+.Main {
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #222222;
+  padding-top: 55px;
+  /* Adjusted for fixed header */
+  padding-bottom: 70px;
+  /* Adjusted for fixed footer */
+}
+
+.Details {
+  display: flex;
+  flex-direction: column;
+}
+
+.AppHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  min-height: 59px;
+  display: flex;
+  align-items: center;
+  border: #323232;
+  gap: 1rem;
+  background-color: #222222;
+  border-bottom: 2px solid #2b2b2b;
+}
+
+.AppFooter {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  border: #323232;
+  gap: 1rem;
+  background-color: #2b2b2b;
+}
+
+.AppHeader img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.AppBody {
+  scrollbar-width: none;
+  min-height: 479px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.UIMain input {
+  width: 170px;
+  height: 48px;
+  /* Increased from 36px */
+  border-radius: 5px;
+  border: none;
+  background-color: #2b2b2b;
+  color: #ffffff;
+  font-size: 16px;
+  font-size: 1.5rem;
+}
+
+.MainInput {
+  font-size: 1.5rem !important;
+  font-weight: 500;
+}
+
+.UIMain {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+  height: 48px;
+}
+
+.currency {
+  overflow: hidden;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  background-color: #3b3c40;
+  border: 1px solid #444;
+  cursor: pointer;
+}
+
+.UIMain input:focus {
+  outline: none;
+}
+
+.container {
+  min-height: 142.5px;
+  min-width: 326px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: #2b2b2b;
+  padding: 10px;
+  gap: 10px;
+}
+
+.box {
+  display: flex;
+  margin: 10px;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.UIheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.selling-text {
+  font-size: 12px;
+  color: #cccccc;
+}
+
+.amount {
+  position: absolute;
+  left: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  color: #aaaaaa;
+}
+
+.half,
+.max {
+  padding: 4px 6px;
+  border-radius: 6px;
+  background-color: #3b3c40;
+  color: #aaaaaa;
+  font-size: 10px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.half:hover,
+.max:hover {
+  border-color: #cccccc;
+  color: #ffffff;
+}
+
+.UIMain {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-left: 10px;
+  height: 36px;
+}
+
+.currency {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  background-color: #3b3c40;
+  border: 1px solid #444;
+  cursor: pointer;
+}
+
+.currency-logo {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.currency-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.UIFooter {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-left: 10px;
+}
+
+.buttons {
+  display: flex;
+  gap: 6px;
+}
+
+.popupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup {
+  background-color: #2b2b2b;
+  width: 100%;
+  max-width: 400px;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+
+.popupHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.popupHeader h3 {
+  color: #ffffff;
+  margin: 0;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.searchContainer {
+  margin-bottom: 16px;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background-color: #3b3c40;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.coinList {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 16px;
+}
+
+.coinListItem {
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.coinListItem:hover {
+  background-color: #3b3c40;
+}
+
+.closeBottomButton {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: #3b3c40;
+  border: 1px solid #444;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.Select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: #ab9ff2;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-bottom: 10px;
+}
+
+.Select:hover {
+  background-color: #afa4ef;
+}
+
+.Swap_Div {
+  width: 80%;
+  height: 20%;
+}
+
+.Swap_Button {
+  width: 100%;
+  padding: 12px;
+  height: 100%;
+  border-radius: 11px;
+  margin-top: 1.4rem;
+  background-color: #afa4ef;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.CoinWrapper {
+  cursor: pointer;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 20px;
+  background-color: #2a2a2a;
+  margin: 0.3rem auto;
+  transition: all 0.2s ease;
+}
+
+.CoinWrapper:hover {
+  background-color: #333333;
+}
+
+.CoinIcon img {
+  border-radius: 22px;
+  width: 44px;
+  height: 44px;
+}
+
+.CoinName {
+  gap: 1rem;
+  text-align: left;
+  flex: 1;
+}
+
+.CoinName h3 {
+  color: #8e9397;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.CoinName p,
+.Coin-Price p {
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+.CoinPrice {
+  text-align: right;
+}
+
+.CoinPrice h3 {
+  color: #f1f1f1;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.CoinsWrapper {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.Swap-Icon {
+  position: absolute;
+  z-index: 999;
+  top: 34%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #afa4ef;
+  border-radius: 16px;
+  width: 32px;
+  height: 32px;
+}
+
+.SwapTerminal {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  align-items: center;
+}

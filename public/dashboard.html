@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dashboard | WealthLink</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="WealthLink dashboard for managing your finances. View, analyze, and export your financial data.">
+    <link rel="icon" href="images/logoimg.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <link rel="stylesheet" href="styles/dark-mode.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/bfbf24a258.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-database.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <div class="container my-5">
+        <h1 class="mb-4">Financial Dashboard</h1>
+        <button type="button" class="btn btn-info mb-3" data-bs-toggle="modal" data-bs-target="#userGuideModal"
+            id="userGuideBtn">
+            User Guide
+        </button>
+
+        <button type="button" class="btn btn-success mb-3 ms-2" id="exportCSVBtn">
+            Export Data as CSV
+        </button>
+
+        <!-- User Guide Popup -->
+        <div class="modal fade" id="userGuideModal" tabindex="-1" aria-labelledby="userGuideModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="userGuideModalLabel">User Guide</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <ul>
+                            <li><strong>Enter Data:</strong> Use the form to input your Net Worth, Investments, Debts,
+                                and Monthly Expenses for a specific date. Click <b>Save Entry</b> to add it to your
+                                dashboard.</li>
+                            <li><strong>View History:</strong> The main chart shows how your values change over time.
+                                Hover over points for details.</li>
+                            <li><strong>Insight Charts:</strong> When you have 3 or more entries, you’ll see
+                                projections, breakdowns, and ratios to help you understand your finances better.</li>
+                            <li><strong>Data Table:</strong> All your entries are listed in a table at the bottom for
+                                easy review.</li>
+                        </ul>
+                        <p class="mb-0"><strong>Tip:</strong> Regularly update your data for the most accurate insights!
+                        </p>
+                        <div class="form-check mt-3" style = "width: 100%; display: flex; justify-content: end;">
+                            <input class="form-check-input" type="checkbox" value="" id="dontShowGuide" style = "margin-right: 5px">
+                            <label class="form-check-label" for="dontShowGuide">
+                                Don't show this again
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Latest Summary Numbers -->
+        <div id="latestSummary" class="row mb-4"></div>
+        <!-- Form to Add New Entry -->
+        <form id="entryForm" class="row g-3 align-items-end mb-4">
+            <div class="col-md-2">
+                <label for="entryDate" class="form-label">Date</label>
+                <input type="date" class="form-control" id="entryDate" required>
+            </div>
+            <div class="col-md-2">
+                <label for="netWorth" class="form-label">Net Worth</label>
+                <input type="number" class="form-control" id="netWorth" required>
+            </div>
+            <div class="col-md-2">
+                <label for="investments" class="form-label">Investments</label>
+                <input type="number" class="form-control" id="investments" required>
+            </div>
+            <div class="col-md-2">
+                <label for="debts" class="form-label">Debts</label>
+                <input type="number" class="form-control" id="debts" required>
+            </div>
+            <div class="col-md-2">
+                <label for="expenses" class="form-label">Monthly Expenses</label>
+                <input type="number" class="form-control" id="expenses" required>
+            </div>
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-primary w-100">Save Entry</button>
+            </div>
+        </form>
+
+        <!-- Main Chart for History of All Values -->
+        <div class="card p-4 mb-4 main-chart-card">
+            <div class="chart-responsive-wrapper" style="display: flex; justify-content: center; width: 100%;">
+                <h5 class="text-center mb-4">History of All Values</h5>
+                <div class="main-chart-container" style="display: flex; justify-content: center; width: 100%;">
+                    <canvas id="historyChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projection and Insight Charts -->
+        <div id="projectionCharts" class="d-flex flex-wrap gap-3 justify-content-start mb-4">
+            <div id="projectionChartContainer" style="display:none;">
+                <h6 class="text-center">Net Worth Projection</h6>
+                <canvas id="projectionChart" style="max-width:400px;max-height:250px;"></canvas>
+            </div>
+            <div id="pieChartContainer" style="display:none;">
+                <h6 class="text-center">Latest Investments vs Debts vs Expenses</h6>
+                <canvas id="pieChart" style="max-width:300px;max-height:250px;"></canvas>
+            </div>
+            <div id="avgExpenseChartContainer" style="display:none;">
+                <h6 class="text-center">Average Monthly Expenses</h6>
+                <canvas id="avgExpenseChart" style="max-width:300px;max-height:250px;"></canvas>
+            </div>
+            <div id="debtToAssetChartContainer" style="display:none;">
+                <h6 class="text-center">Debt to Asset Ratio Over Time</h6>
+                <canvas id="debtToAssetChart" style="max-width:400px;max-height:250px;"></canvas>
+            </div>
+        </div>
+
+        <!-- Data Table for All Entries -->
+        <div class="card p-3 mb-4">
+            <h5>All Data Points</h5>
+            <div class="table-responsive">
+                <table class="table table-striped" id="dataPointsTable">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Net Worth</th>
+                            <th>Investments</th>
+                            <th>Debts</th>
+                            <th>Expenses</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div id="noDataMsg" class="text-center text-muted"></div>
+        </div>
+    </div>
+
+    <script src="scripts/init.js"></script>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/navbar.js"></script>
+    <script src="scripts/dashboard.js"></script>
+    <script src="scripts/footer.js"></script>
+</body>
+</html>

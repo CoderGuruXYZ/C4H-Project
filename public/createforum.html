@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Create Forum | WealthLink</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Create a new forum on WealthLink. Start a discussion with the community.">
+    <link rel="icon" href="images/logoimg.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/dark-mode.css">
+    <link rel="stylesheet" href="styles/createforum.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/bfbf24a258.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-database.js"></script>
+    <script src="https://apis.google.com/js/platform.js"></script>
+</head>
+
+<body>
+    <div class="container mt-4">
+        <!-- Base template, inputs and labels for creating a new forum -->
+        <h1>Create a New Forum</h1>
+        <div class="createForumForm">
+            <div class="fieldContainer">
+                <div class="labelForumTitle">Forum Title:</div>
+                <input type="text" id="forumTitle" name="forumTitle" class="form-control">
+            </div>
+            <br>
+            <div class="fieldContainer">
+                <div class="labelForumContent">Content:</div>
+                <textarea id="forumContent" name="forumContent" rows="4" class="form-control"></textarea>
+            </div>
+            <br>
+            <span class="error"></span>
+            <button id="createForumSubmit" type="submit">Create Forum</button>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src='scripts/init.js'></script>
+    <script src='scripts/navbar.js'></script>
+    <script src='scripts/classes.js'></script>
+    <script src='scripts/createforum.js'></script>
+    <script src="scripts/footer.js"></script>
+</body>
+
+</html>

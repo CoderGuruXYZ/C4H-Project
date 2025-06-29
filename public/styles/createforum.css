@@ -1,0 +1,111 @@
+/* Forum Creation Page Styles */
+
+.createForumForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+#forumTitle {
+    font-size: 1em;
+    margin-bottom: 15px;
+}
+
+.fieldContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 600px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.labelForumContent,
+.labelForumTitle {
+    padding: 4px 0 4px 0;
+    font-size: 1.2em;
+    font-weight: 500;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.createForumForm input[type="text"],
+.createForumForm textarea {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    font-size: 1.2em;
+    color: var(--textColor, #333);
+    background-color: #f9f9f9;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    transition: outline 0.2s ease, border-color 0.2s ease;
+}
+
+.createForumForm input:focus,
+.createForumForm textarea:focus {
+    outline: none;
+    border-color: var(--blue1, #0066cc);
+}
+
+.forumDescription {
+    resize: vertical;
+}
+
+#createForumSubmit {
+    margin-top: 25px;
+    background-color: var(--blue1, #0066cc);
+    color: #fff;
+    width: 150px;
+    padding: 10px;
+    font-size: 1em;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+#createForumSubmit:hover {
+    background-color: var(--blue2, #0052a3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.error {
+    display: none;
+    color: red;
+    margin-top: 10px;
+}
+
+@media (max-width: 800px) {
+    .container {
+        padding: 20px;
+    }
+
+    .createForumForm {
+        padding: 4px;
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+
+    .fieldContainer {
+        max-width: 100%;
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+
+    .createForumForm input[type="text"],
+    .createForumForm textarea {
+        font-size: 0.97em;
+        padding: 8px;
+    }
+
+    #createForumSubmit {
+        width: 100%;
+        font-size: 1em;
+        padding: 12px 0;
+        border-radius: 8px;
+    }
+}

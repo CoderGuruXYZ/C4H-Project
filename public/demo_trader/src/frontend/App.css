@@ -1,0 +1,397 @@
+*::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.Wallet-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2a2a2a;
+  color: #ffffff;
+  text-align: center;
+  margin: 4px;
+  padding: 4px;
+  width: 48px;
+  height: 48px;
+  border-radius: 48px;
+  cursor: pointer;
+}
+
+.Wallet-Name {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.Wallet-Icon {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.Sidebar-Functions {
+  padding-top: 5px;
+  align-items: center;
+  width: 40px;
+  border-top: solid 1px #2e2e2e;
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  position: absolute;
+  bottom: 5px;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.Sidebar-Popup {
+  background-color: #000000;
+  min-height: 575px;
+  border-radius: 10px;
+  min-height: 90vh;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  z-index: 9999;
+  left: 10px;
+  top: 10px;
+  height: 580px;
+  min-width: 56px;
+}
+
+.popupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup {
+  background-color: #2b2b2b;
+  width: 480px;
+  max-width: 400px;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+
+.popupHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.popupHeader h3 {
+  color: #ffffff;
+  margin: 0;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.searchContainer {
+  margin-bottom: 16px;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background-color: #3b3c40;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+#root {
+  min-height: 600px;
+  min-width: 360px;
+  width: 360px;
+  min-height: 100vh;
+  border: #3a3a3a solid 1px;
+}
+
+.Main {
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #222222;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding-top: 55px;
+  /* Adjusted for fixed header */
+  padding-bottom: 70px;
+  /* Adjusted for fixed footer */
+}
+
+.Details {
+  display: flex;
+  flex-direction: column;
+}
+
+.App-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  min-height: 59px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: #323232;
+  gap: 1rem;
+  background-color: #222222;
+  border-bottom: 2px solid #2b2b2b;
+  max-width: 360px;
+}
+
+.Shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  min-height: 59px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: #323232;
+  background-color: #222222;
+  border-bottom: 2px solid #2b2b2b;
+  max-width: 360px;
+}
+
+.Gas {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  gap: 3px;
+  right: 10%;
+}
+
+.App-footer {
+  max-width: 360px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: #323232;
+  gap: 1rem;
+  background-color: #2e2e2e;
+}
+
+.Topper {
+  height: 2px;
+  width: 43.6px;
+  position: absolute;
+  top: 0;
+  background-color: #ab9ff2;
+}
+
+.App-header img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.App-Body {
+  scrollbar-width: none;
+  min-height: 479px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.App-balance {
+  padding-top: 10%;
+  text-align: center;
+  min-height: 70px;
+}
+
+.App-balance h1 {
+  font-size: 36px;
+  margin-bottom: 5px;
+  color: #ffffff;
+}
+
+#change {
+  color: #21e56f;
+}
+
+.App-balance-change {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  text-align: center;
+  height: 29px;
+}
+
+.App-balance h2 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.Swap-Buttons {
+  display: flex;
+  justify-content: center;
+  gap: 0.7rem;
+  margin: 0.8rem 0;
+}
+
+.Swap-Button {
+  display: flex;
+  flex-direction: column;
+  width: 75.5px;
+  max-width: 75.5px;
+  height: 76px;
+  max-height: 76px;
+  gap: 3px;
+  background-color: #2a2a2a;
+  color: #ffffff;
+  /* Major text color */
+  border: none;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.Swap-Button img {
+  width: 24px;
+  height: 24px;
+}
+
+.Swap-Button:hover {
+  background-color: #2b2b2b;
+  /* Matches footer */
+}
+
+.Balance-Wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.App-buttons {
+  display: flex;
+  margin: auto;
+}
+
+.App-button {
+  background-color: #2a2a2a;
+  color: #8e9397;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 24px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  width: 40%;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.App-button:hover {
+  background-color: #333333;
+}
+
+.Coin-Wrapper {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 20px;
+  background-color: #2a2a2a;
+  margin: 0.3rem auto;
+  transition: all 0.2s ease;
+}
+
+.Coin-Wrapper:hover {
+  background-color: #333333;
+}
+
+.Coin-Icon img {
+  border-radius: 22px;
+  width: 44px;
+  height: 44px;
+}
+
+.Coin-Name {
+  gap: 1rem;
+  text-align: left;
+  flex: 1;
+}
+
+.Coin-Name h3 {
+  color: #8e9397;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.Coin-Name p,
+.Coin-Price p {
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+.Coin-Price {
+  text-align: right;
+}
+
+.Coin-Price h3 {
+  color: #f1f1f1;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.Coins-Wrapper {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.PNL {
+  padding: 3px;
+  border-radius: 5px;
+  max-height: 29;
+  max-width: 77px;
+}
+
+.Footer_Item {
+  cursor: pointer;
+}

@@ -1,0 +1,28 @@
+/* Dashboard styles */
+
+.chart-responsive-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-chart-container {
+    position: relative;
+    width: 90%;
+    height: 60vh;
+    min-height: 400px;
+    margin: 0 auto;
+}
+
+.card.main-chart-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+.card.main-chart-card h5 {
+    width: 100%;
+    text-align: center;
+}

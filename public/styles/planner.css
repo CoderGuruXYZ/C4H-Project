@@ -1,0 +1,201 @@
+.tips-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #0066cc;
+    border: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tips-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(0,0,0,0.4);
+    background: #9a8ee8;
+}
+
+.tipsPopup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 10000; /* Increased z-index to ensure modal appears on top */
+    animation: fadeIn 0.3s ease;
+}
+
+.tips-content {
+    position: relative;
+    background: white;
+    margin: 2% auto;
+    padding: 0;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    overflow: hidden;
+    animation: slideIn 0.3s ease;
+}
+
+.tips-header {
+    background: #0066cc;
+    color: white;
+    padding: 20px 30px;
+    position: relative;
+}
+
+.tips-header i {
+    color: white !important;
+}
+
+.tips-header h2 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.close-tips {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.close-tips:hover {
+    background-color: rgba(255,255,255,0.2);
+}
+
+.tips-body {
+    padding: 30px;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.tip-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    background: #f8f9fa;
+    border-left: 4px solid #0066cc;
+}
+
+.tip-section h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.tip-section p, .tip-section ul {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.tip-section ul {
+    padding-left: 20px;
+}
+
+.tip-section li {
+    margin-bottom: 8px;
+}
+
+.tip-section .highlight {
+    background-color: rgba(0, 102, 204, 0.1);
+    border: 1px solid rgba(0, 102, 204, 0.2);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 500;
+    color: #0066cc;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+    .tips-content {
+        width: 95%;
+        margin: 5% auto;
+    }
+
+    .tips-body {
+        padding: 20px;
+    }
+
+    .tip-section {
+        padding: 15px;
+    }
+
+    .tips-button {
+        width: 55px;
+        height: 55px;
+        font-size: 22px;
+    }
+}
+
+/* Dark mode styles */
+body.dark-mode .tips-content {
+    background: #333333;
+    color: #ffffff;
+}
+
+body.dark-mode .tips-button {
+    background: #9a8ee8;
+}
+
+body.dark-mode .tips-button:hover {
+    background: #0066cc;
+}
+
+body.dark-mode .tips-header {
+    background: #9a8ee8;
+}
+
+body.dark-mode .tip-section {
+    background: #222222;
+    border-left-color: #9a8ee8;
+}
+
+body.dark-mode .tip-section h3 {
+    color: #ffffff;
+}
+
+body.dark-mode .tip-section p,
+body.dark-mode .tip-section ul,
+body.dark-mode .tip-section li {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+body.dark-mode .tip-section .highlight {
+    background-color: rgba(154, 142, 232, 0.2);
+    border-color: rgba(154, 142, 232, 0.3);
+    color: #9a8ee8;
+}

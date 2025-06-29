@@ -1,0 +1,318 @@
+{
+  "activeWallet": "Main",
+  "Wallets": [
+    {
+      "coins": [
+        {
+          "USDPrice": 152.306787815,
+          "Name": "Wrapped SOL",
+          "Symbol": "SOL",
+          "logo": "https://d23exngyjlavgo.cloudfront.net/solana_So11111111111111111111111111111111111111112",
+          "address": "So11111111111111111111111111111111111111112",
+          "amount": 0.9044729959709819,
+          "PricePercentChange": 4.1819521503068255,
+          "PriceChange": 6.113857072000002
+        }
+      ],
+      "Wallet-Name": "Main"
+    },
+    {
+      "coins": [
+        {
+          "USDPrice": 150.938063426,
+          "Name": "Wrapped SOL",
+          "Symbol": "SOL",
+          "logo": "https://d23exngyjlavgo.cloudfront.net/solana_So11111111111111111111111111111111111111112",
+          "address": "So11111111111111111111111111111111111111112",
+          "amount": 3.923867949945719,
+          "PricePercentChange": 6.637141440112463,
+          "PriceChange": 9.441789650000004
+        }
+      ],
+      "Wallet-Name": "alt"
+    },
+    {
+      "Wallet-Name": "gurt: yo",
+      "coins": [
+        {
+          "USDPrice": 150.241868686,
+          "Name": "Wrapped SOL",
+          "Symbol": "SOL",
+          "logo": "https://d23exngyjlavgo.cloudfront.net/solana_So11111111111111111111111111111111111111112",
+          "address": "So11111111111111111111111111111111111111112",
+          "PricePercentChange": 5.613084982865002,
+          "PriceChange": 7.984998990000008,
+          "amount": 21.251017534984946
+        }
+      ],
+      "History": [
+        {
+          "sellingToken": {
+            "USDPrice": 150.955090316,
+            "Name": "Wrapped SOL",
+            "Symbol": "SOL",
+            "logo": "https://logo.moralis.io/solana-mainnet_So11111111111111111111111111111111111111112_5ffe40a76ba4f2a8.webp",
+            "address": "So11111111111111111111111111111111111111112",
+            "PricePercentChange": -0.4255266586210729,
+            "PriceChange": -0.6450992210000095
+          },
+          "buyingToken": {
+            "USDPrice": 0.000046508,
+            "Name": "catwifnose",
+            "Symbol": "BARNEY",
+            "logo": null,
+            "address": "4eSbuCd5JG6SoH9XtzeZzq5d9bbrPcaWAMp2VtFbpump",
+            "PricePercentChange": -24.995565016852936,
+            "PriceChange": -0.000015499000000000002,
+            "amount": 6491575.226455663
+          },
+          "amount": 2,
+          "total": 6491575.226455663
+        },
+        {
+          "sellingToken": {
+            "USDPrice": 0.000050954,
+            "Name": "catwifnose",
+            "Symbol": "BARNEY",
+            "logo": null,
+            "address": "4eSbuCd5JG6SoH9XtzeZzq5d9bbrPcaWAMp2VtFbpump",
+            "PricePercentChange": -18.309223152224753,
+            "PriceChange": -0.000011353000000000005
+          },
+          "buyingToken": {
+            "USDPrice": 151.073107114,
+            "Name": "Wrapped SOL",
+            "Symbol": "SOL",
+            "logo": "https://logo.moralis.io/solana-mainnet_So11111111111111111111111111111111111111112_5ffe40a76ba4f2a8.webp",
+            "address": "So11111111111111111111111111111111111111112",
+            "PricePercentChange": -0.3265175563346397,
+            "PriceChange": -0.4948994979999952
+          },
+          "amount": "6491575.2265",
+          "total": 2.1894811751073613
+        },
+        {
+          "sellingToken": {
+            "USDPrice": 150.841089667,
+            "Name": "Wrapped SOL",
+            "Symbol": "SOL",
+            "logo": "https://logo.moralis.io/solana-mainnet_So11111111111111111111111111111111111111112_5ffe40a76ba4f2a8.webp",
+            "address": "So11111111111111111111111111111111111111112",
+            "PricePercentChange": -0.5317137310689241,
+            "PriceChange": -0.8063301539999941
+          },
+          "buyingToken": {
+            "USDPrice": 0.000072547,
+            "Name": "The Greatest Memecoin",
+            "Symbol": "Money",
+            "logo": "https://logo.moralis.io/solana-mainnet_8fgJHGRWh3sWT3cPGbhtkJPRy5BYoDTHZ46T7ewzpump_0cb77db64ee9f23ebe2e8a755c8f1852.webp",
+            "address": "8fgJHGRWh3sWT3cPGbhtkJPRy5BYoDTHZ46T7ewzpump",
+            "PricePercentChange": 20.106528932289574,
+            "PriceChange": 0.000012457000000000006,
+            "amount": 1039609.4233186763
+          },
+          "amount": 0.5,
+          "total": 1039609.4233186763
+        },
+        {
+          "sellingToken": {
+            "USDPrice": 0.000090843,
+            "Name": "The Greatest Memecoin",
+            "Symbol": "Money",
+            "logo": "https://logo.moralis.io/solana-mainnet_8fgJHGRWh3sWT3cPGbhtkJPRy5BYoDTHZ46T7ewzpump_0cb77db64ee9f23ebe2e8a755c8f1852.webp",
+            "address": "8fgJHGRWh3sWT3cPGbhtkJPRy5BYoDTHZ46T7ewzpump",
+            "PricePercentChange": 46.62739084819627,
+            "PriceChange": 0.000028888
+          },
+          "buyingToken": {
+            "USDPrice": 150.891331861,
+            "Name": "Wrapped SOL",
+            "Symbol": "SOL",
+            "logo": "https://logo.moralis.io/solana-mainnet_So11111111111111111111111111111111111111112_5ffe40a76ba4f2a8.webp",
+            "address": "So11111111111111111111111111111111111111112",
+            "PricePercentChange": -0.46758363440370376,
+            "PriceChange": -0.708857676000008
+          },
+          "amount": "1039609.4233",
+          "total": 0.6258890930052926
+        },
+        {
+          "sellingToken": {
+            "USDPrice": 150.994369198,
+            "Name": "Wrapped SOL",
+            "Symbol": "SOL",
+            "logo": "https://logo.moralis.io/solana-mainnet_So11111111111111111111111111111111111111112_5ffe40a76ba4f2a8.webp",
+            "address": "So11111111111111111111111111111111111111112",
+            "PricePercentChange": -0.3871718397694535,
+            "PriceChange": -0.5868326079999804
+          },
+          "buyingToken": {
+            "USDPrice": 0.000081762,
+            "Name": "The Greatest Memecoin",
+            "Symbol": "Money",
+            "logo": "https://logo.moralis.io/solana-mainnet_8fgJHGRWh3sWT3cPGbhtkJPRy5BYoDTHZ46T7ewzpump_0cb77db64ee9f23ebe2e8a755c8f1852.webp",
+            "address": "8fgJHGRWh3sWT3cPGbhtkJPRy5BYoDTHZ46T7ewzpump",
+            "PricePercentChange": 31.96997820999112,
+            "PriceChange": 0.000019806999999999995,
+            "amount": 3693509.679264206
+          },
+          "amount": 2,
+          "total": 3693509.679264206
+        },
+        {
+          "sellingToken": {
+            "USDPrice": 0.000108369,
+            "Name": "The Greatest Memecoin",
+            "Symbol": "Money",
+            "logo": "https://logo.moralis.io/solana-mainnet_8fgJHGRWh3sWT3cPGbhtkJPRy5BYoDTHZ46T7ewzpump_0cb77db64ee9f23ebe2e8a755c8f1852.webp",
+            "address": "8fgJHGRWh3sWT3cPGbhtkJPRy5BYoDTHZ46T7ewzpump",
+            "PricePercentChange": 71.87474780082317,
+            "PriceChange": 0.000044529999999999995
+          },
+          "buyingToken": {
+            "USDPrice": 150.939574196,
+            "Name": "Wrapped SOL",
+            "Symbol": "SOL",
+            "logo": "https://logo.moralis.io/solana-mainnet_So11111111111111111111111111111111111111112_5ffe40a76ba4f2a8.webp",
+            "address": "So11111111111111111111111111111111111111112",
+            "PricePercentChange": -0.41529417621387604,
+            "PriceChange": -0.6294573609999929
+          },
+          "amount": "3693509.6793",
+          "total": 2.6518025678031156
+        },
+        {
+          "sellingToken": {
+            "USDPrice": 150.76687559,
+            "Name": "Wrapped SOL",
+            "Symbol": "SOL",
+            "logo": "https://logo.moralis.io/solana-mainnet_So11111111111111111111111111111111111111112_5ffe40a76ba4f2a8.webp",
+            "address": "So11111111111111111111111111111111111111112",
+            "PricePercentChange": -0.5806522999463856,
+            "PriceChange": -0.8805442309999876
+          },
+          "buyingToken": {
+            "USDPrice": 0.000097133,
+            "Name": "The Greatest Memecoin",
+            "Symbol": "Money",
+            "logo": "https://logo.moralis.io/solana-mainnet_8fgJHGRWh3sWT3cPGbhtkJPRy5BYoDTHZ46T7ewzpump_0cb77db64ee9f23ebe2e8a755c8f1852.webp",
+            "address": "8fgJHGRWh3sWT3cPGbhtkJPRy5BYoDTHZ46T7ewzpump",
+            "PricePercentChange": 57.515938987975154,
+            "PriceChange": 0.000035634000000000005,
+            "amount": 3104338.9083009893
+          },
+          "amount": 2,
+          "total": 3104338.9083009893
+        },
+        {
+          "sellingToken": {
+            "USDPrice": 0.000081115,
+            "Name": "The Greatest Memecoin",
+            "Symbol": "Money",
+            "logo": "https://logo.moralis.io/solana-mainnet_8fgJHGRWh3sWT3cPGbhtkJPRy5BYoDTHZ46T7ewzpump_0cb77db64ee9f23ebe2e8a755c8f1852.webp",
+            "address": "8fgJHGRWh3sWT3cPGbhtkJPRy5BYoDTHZ46T7ewzpump",
+            "PricePercentChange": 34.400774755871204,
+            "PriceChange": 0.000021313000000000004
+          },
+          "buyingToken": {
+            "USDPrice": 150.755132798,
+            "Name": "Wrapped SOL",
+            "Symbol": "SOL",
+            "logo": "https://logo.moralis.io/solana-mainnet_So11111111111111111111111111111111111111112_5ffe40a76ba4f2a8.webp",
+            "address": "So11111111111111111111111111111111111111112",
+            "PricePercentChange": -0.5883957828317968,
+            "PriceChange": -0.8922870229999944
+          },
+          "amount": "3104338.9083",
+          "total": 1.6703142763580592
+        },
+        {
+          "sellingToken": {
+            "USDPrice": 152.39024528,
+            "Name": "Wrapped SOL",
+            "Symbol": "SOL",
+            "logo": "https://logo.moralis.io/solana-mainnet_So11111111111111111111111111111111111111112_5ffe40a76ba4f2a8.webp",
+            "address": "So11111111111111111111111111111111111111112",
+            "PricePercentChange": 1.109666059113146,
+            "PriceChange": 1.6724321030000056
+          },
+          "buyingToken": {
+            "USDPrice": 0.000063145,
+            "Name": "goldentoilet34",
+            "Symbol": "toilet",
+            "logo": null,
+            "address": "8r8XkqZ93vqF5tUVZbwbZvXfVstF96sJaoGm9bE2pump",
+            "PricePercentChange": 0.46248139672581845,
+            "PriceChange": 2.889999999999967e-7,
+            "amount": 4826676.54699501
+          },
+          "amount": 2,
+          "total": 4826676.54699501
+        },
+        {
+          "sellingToken": {
+            "USDPrice": 0.000058906,
+            "Name": "goldentoilet34",
+            "Symbol": "toilet",
+            "logo": "https://logo.moralis.io/solana-mainnet_8r8XkqZ93vqF5tUVZbwbZvXfVstF96sJaoGm9bE2pump_4b2591270e1920e43af70ff09f0f2fdd.webp",
+            "address": "8r8XkqZ93vqF5tUVZbwbZvXfVstF96sJaoGm9bE2pump",
+            "PricePercentChange": -5.733809150410477,
+            "PriceChange": -0.000003583000000000003
+          },
+          "buyingToken": {
+            "USDPrice": 152.401337864,
+            "Name": "Wrapped SOL",
+            "Symbol": "SOL",
+            "logo": "https://logo.moralis.io/solana-mainnet_So11111111111111111111111111111111111111112_5ffe40a76ba4f2a8.webp",
+            "address": "So11111111111111111111111111111111111111112",
+            "PricePercentChange": 1.0997988000807222,
+            "PriceChange": 1.6578747979999946
+          },
+          "amount": "4826676.5470",
+          "total": 1.8656017897382495
+        }
+      ]
+    },
+    {
+      "Wallet-Name": "low vol acc",
+      "coins": [
+        {
+          "USDPrice": 151.182415485,
+          "Name": "Wrapped SOL",
+          "Symbol": "SOL",
+          "logo": "https://logo.moralis.io/solana-mainnet_So11111111111111111111111111111111111111112_5ffe40a76ba4f2a8.webp",
+          "address": "So11111111111111111111111111111111111111112",
+          "PricePercentChange": 7.521099887255721,
+          "PriceChange": 10.575208486999998,
+          "amount": 5.149406805607957
+        }
+      ],
+      "History": [
+        {
+          "sellingToken": {
+            "USDPrice": 0.000031679,
+            "Name": "Crypto News Network",
+            "Symbol": "CNN",
+            "logo": "https://logo.moralis.io/solana-mainnet_5L9W3dwC4pDuDMqwGPp6a7EU82a3SJp8ieGPeT1mbonk_3ce090de3a7376e7aabe67c0c166bddd.webp",
+            "address": "5L9W3dwC4pDuDMqwGPp6a7EU82a3SJp8ieGPeT1mbonk",
+            "PricePercentChange": 567.6451818761965,
+            "PriceChange": 0.000026685
+          },
+          "sellingAmount": 0.000029412,
+          "buyingAmount": 160.848443417,
+          "buyingToken": {
+            "USDPrice": 160.841170919,
+            "Name": "Wrapped SOL",
+            "Symbol": "SOL",
+            "logo": "https://logo.moralis.io/solana-mainnet_So11111111111111111111111111111111111111112_5ffe40a76ba4f2a8.webp",
+            "address": "So11111111111111111111111111111111111111112",
+            "PricePercentChange": -2.5255166335463115,
+            "PriceChange": -4.167143275000001
+          },
+          "amount": "3201866.3327",
+          "total": 0.6306340781657493
+        }
+      ]
+    }
+  ]
+}
