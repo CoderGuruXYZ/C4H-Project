@@ -6,10 +6,8 @@ Names and Schools:
 - Hassan Hussain - The Royal Grammar School, High Wycombe
 - Ethan Zhou - The Royal Grammar School, High Wycombe
 
-Date: 07/10/25
-
-Category: Finance
-
+Date: 07/10/25 \n
+Category: Finance \n
 Project Name: WeatlthLink
 
 
